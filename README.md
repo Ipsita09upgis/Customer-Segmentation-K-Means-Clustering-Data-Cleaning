@@ -1,6 +1,6 @@
 # 🧼 K-Means Clustering: Data Cleaning
 
-This repository contains the **data cleaning steps** performed as part of a customer segmentation project using K-Means Clustering on online retail transaction data.
+The objective of this notebook is to prepare the online retail dataset for clustering analysis. The steps include loading, exploring, cleaning, engineering features, transforming the data, and finally saving the cleaned dataset. This data preparation pipeline will help identify customer segments using unsupervised learning techniques like K-means clustering.
 
 ## 📄 File Overview
 
