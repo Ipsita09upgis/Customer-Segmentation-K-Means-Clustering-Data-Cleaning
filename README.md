@@ -1,17 +1,15 @@
-# Customer-Segmentation-K-Means-Clustering-Data-Cleaning
-
 # 🧼 K-Means Clustering: Data Cleaning
 
-This repository contains the **data cleaning steps** carried out as part of a customer segmentation project using K-Means Clustering on online retail data. T
-he goal is to clean, transform, and prepare the online retail dataset for clustering analysis.
+This repository contains the **data cleaning steps** performed as part of a customer segmentation project using K-Means Clustering on online retail transaction data.
 
 ## 📄 File Overview
 
-- `K Means Clustering Data Cleaning_Ipsita.ipynb`: Jupyter Notebook dedicated to cleaning the dataset before applying clustering algorithms.
+- `K Means Clustering Data Cleaning_Ipsita.ipynb`: Jupyter Notebook containing data cleaning operations and saving the cleaned dataset.
+- `Online Retail Cleaned.xlsx`: Cleaned version of the original dataset, saved for further analysis.
 
 ## 📊 Dataset
 
-The dataset used is an online retail dataset with fields such as:
+The dataset used is an Excel file containing online retail transactions with fields such as:
 - `InvoiceNo`
 - `StockCode`
 - `Description`
@@ -21,7 +19,6 @@ The dataset used is an online retail dataset with fields such as:
 - `CustomerID`
 - `Country`
 
-> 📌 *Note: The dataset file (`Online Retail.xlsx`) is not included in this repo. Please ensure it is available locally for the notebook to run properly.*
 
 ---
 
@@ -32,21 +29,27 @@ The dataset used is an online retail dataset with fields such as:
 - Dropped rows missing `CustomerID` or `Description`.
 
 ### 2. Remove Duplicates
-- Identified and removed duplicate rows using `drop_duplicates()`.
+- Removed duplicate records using `drop_duplicates()`.
 
 ### 3. Filter Invalid Transactions
-- Removed transactions with `Quantity <= 0` or `UnitPrice <= 0`.
-- Filtered out cancelled orders (`InvoiceNo` starting with 'C').
+- Removed rows where `Quantity <= 0` or `UnitPrice <= 0`.
+- Excluded cancelled transactions (`InvoiceNo` starting with 'C').
 
 ### 4. Correct Data Types
-- Converted `CustomerID` to integer type for further analysis.
+- Converted `CustomerID` to integer for consistency.
 
 ---
 
-## 🛠 Technologies Used
+## 💾 Save Cleaned Data
 
-- Python 3.x
-- Pandas
-- Jupyter Notebook
+After cleaning, the data was saved back to an Excel file for reuse:
+
+```python
+df.to_excel("Online Retail Cleaned.xlsx", index=False)
 
 
+🛠 Technologies Used
+Python 3.x
+Pandas
+Jupyter Notebook
+OpenPyXL (for Excel writing)
